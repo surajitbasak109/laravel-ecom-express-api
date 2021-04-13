@@ -28,6 +28,11 @@
         "psalm/plugin-laravel": "^1.2",
         "vimeo/psalm": "^3.11"
     },
+    "autoload": {
+        "psr-4": {
+            "surajitbasak109\\Ecomexpress\\*": "src"
+        }
+    },
     "autoload-dev": {
         "psr-4": {
             "surajitbasak109\\Ecomexpress\\Tests\\": "tests"
