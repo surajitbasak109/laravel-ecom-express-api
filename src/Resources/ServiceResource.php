@@ -11,10 +11,10 @@ class ServiceResource extends Resource
      * @param array $credentials array containing username and password
      * @return mixed
      */
-    public function checkServiceability(array $credentials)
+    public function checkServiceability()
     {
         $endpoint = '/apiv2/pincodes/';
 
-        return $this->postWithoutBodyRequest($endpoint, $credentials);
+        return $this->postWithoutBodyRequest($endpoint);
     }
 }

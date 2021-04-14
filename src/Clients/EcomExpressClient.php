@@ -8,7 +8,7 @@ class EcomExpressClient implements Client
 
 	protected $endpoint;
 
-	protected $headers;
+	protected $headers = [];
 
 	protected $responseType;
 
@@ -36,7 +36,7 @@ class EcomExpressClient implements Client
 	 */
 	public function setHeaders(string $token = null): object
 	{
-		$this->headers = ["Content-Type: application/json"];
+		/* $this->headers = ["Content-Type: application/json"]; */
 
         if ($token) {
             array_push($this->headers, "Authorization: Basic {$token}");
@@ -53,6 +53,7 @@ class EcomExpressClient implements Client
 	 */
 	public function post(array $data, $type = "POST")
 	{
+        array_push($this->headers, "Content-Type: application/json");
 		$curl = curl_init();
 
 		curl_setopt_array($curl, [
@@ -88,23 +89,27 @@ class EcomExpressClient implements Client
 	 */
 	public function postWithoutBody($type = "POST")
 	{
-		$curl = curl_init();
+        array_push($this->headers, "Content-Length: 0");
+		$curl = curl_init($this->endpoint);
+        curl_setopt($curl, CURLOPT_URL, $this->endpoint);
+        curl_setopt($curl, CURLOPT_POST, true);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $this->headers);
 
-		curl_setopt_array($curl, [
-			CURLOPT_URL => $this->endpoint,
-			CURLOPT_RETURNTRANSFER => true,
-			CURLOPT_ENCODING => "",
-			CURLOPT_MAXREDIRS => 10,
-			CURLOPT_TIMEOUT => 0,
-			CURLOPT_FOLLOWLOCATION => true,
-			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-			CURLOPT_CUSTOMREQUEST => $type,
-			// CURLOPT_POSTFIELDS => json_encode($data),
-			CURLOPT_HTTPHEADER => $this->headers,
-		]);
+
+		/* curl_setopt_array($curl, [ */
+		/* 	CURLOPT_URL => $this->endpoint, */
+            /* CURLOPT_POST => true, */
+		/* 	CURLOPT_RETURNTRANSFER => true, */
+		/* 	CURLOPT_HTTPHEADER => $this->headers, */
+		/* 	CURLOPT_MAXREDIRS => 10, */
+		/* 	CURLOPT_TIMEOUT => 0, */
+		/* 	CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1, */
+		/* 	CURLOPT_CUSTOMREQUEST => $type, */
+		/* 	// CURLOPT_POSTFIELDS => json_encode($data), */
+		/* ]); */
 
 		$response = curl_exec($curl);
-        /* var_dump($response); */
 
 		if (!$this->isValid($response)) {
 			$response = json_encode(['curl_error' => curl_error($curl)]);
@@ -133,6 +138,7 @@ class EcomExpressClient implements Client
 	 */
 	public function get()
 	{
+        array_push($this->headers, "Content-Type: application/json");
 		$curl = curl_init();
 
 		curl_setopt_array($curl, [
