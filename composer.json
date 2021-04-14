@@ -30,7 +30,7 @@
     },
     "autoload": {
         "psr-4": {
-            "surajitbasak109\\Ecomexpress\\*": "src"
+            "surajitbasak109\\Ecomexpress\\": "src"
         }
     },
     "autoload-dev": {

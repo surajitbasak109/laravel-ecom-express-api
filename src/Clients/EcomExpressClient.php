@@ -34,10 +34,13 @@ class EcomExpressClient implements Client
 	 * @param string $token
 	 * @return object
 	 */
-	public function setHeaders(string $header): object
+	public function setHeaders(string $token = null): object
 	{
 		$this->headers = ["Content-Type: application/json"];
-		$this->headers[] = $header;
+
+        if ($token) {
+            array_push($this->headers, "Authorization: Basic {$token}");
+        }
 
 		return $this;
 	}
@@ -66,6 +69,7 @@ class EcomExpressClient implements Client
 		]);
 
 		$response = curl_exec($curl);
+        /* var_dump($response); */
 
 		if (!$this->isValid($response)) {
 			$response = json_encode(['curl_error' => curl_error($curl)]);

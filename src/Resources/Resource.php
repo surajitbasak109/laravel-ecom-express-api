@@ -7,10 +7,12 @@ use surajitbasak109\Ecomexpress\Resources\ResourceInterface;
 abstract class Resource implements ResourceInterface
 {
     protected $client;
+    protected $token;
 
-    public function __construct(Client $client)
+    public function __construct(Client $client, string $token)
     {
         $this->client = $client;
+        $this->token = $token;
     }
 
     public function getRequest(string $endpoint)
