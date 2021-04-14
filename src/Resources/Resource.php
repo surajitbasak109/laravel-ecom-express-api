@@ -29,6 +29,13 @@ abstract class Resource implements ResourceInterface
                     ->post($params);
     }
 
+    public function postWithoutBodyRequest(string $endpoint)
+    {
+        return $this->client->setEndpoint($endpoint)
+                    ->setHeaders($this->token)
+                    ->postWithoutBody();
+    }
+
     public function patchRequest(string $endpoint, array $params)
     {
         return $this->client->setEndpoint($endpoint)

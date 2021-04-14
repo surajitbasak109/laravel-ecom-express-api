@@ -8,4 +8,6 @@ interface ResourceInterface
     public function postRequest(string $endpoint, array $params);
 
     public function patchRequest(string $endpoint, array $params);
+
+    public function postWithoutBodyRequest(string $endpoint);
 }

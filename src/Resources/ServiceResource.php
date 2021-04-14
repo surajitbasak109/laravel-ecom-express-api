@@ -15,6 +15,6 @@ class ServiceResource extends Resource
     {
         $endpoint = '/apiv2/pincodes/';
 
-        return $this->postRequest($endpoint, $credentials);
+        return $this->postWithoutBodyRequest($endpoint, $credentials);
     }
 }

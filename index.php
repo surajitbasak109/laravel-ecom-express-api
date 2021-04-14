@@ -10,4 +10,4 @@ $token = $ecom->getToken(['username' => 'kidcitysolutionpvtltd19979_temp', 'pass
 var_dump($token);
 $response = $ecom->service($token)->checkServiceability([]);
 
-print_r($response);
+var_dump($response);
