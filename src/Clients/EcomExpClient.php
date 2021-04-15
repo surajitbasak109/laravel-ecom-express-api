@@ -1,10 +1,10 @@
 <?php
 
-namespace surajitbasak109\Ecomexpress\Clients;
+namespace surajitbasak109\EcomExp\Clients;
 
-class EcomExpressClient implements Client
+class EcomExpClient implements Client
 {
-	protected $url = "https://clbeta.ecomexpress.in";
+	protected $url = "https://clbeta.EcomExp.in";
 
 	protected $endpoint;
 

@@ -1,5 +1,5 @@
 <?php
-namespace surajitbasak109\Ecomexpress\Clients;
+namespace surajitbasak109\EcomExp\Clients;
 
 interface Client
 {

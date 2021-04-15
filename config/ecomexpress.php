@@ -11,8 +11,8 @@ return [
     */
 
     'credentials' => [
-        'username' => env('ECOMEXPRESS_USERNAME', 'username'),
-        'password' => env('ECOMEXPRESS_PASSWORD', 'password')
+        'username' => env('ECOMEXP_USERNAME', 'username'),
+        'password' => env('ECOMEXP_PASSWORD', 'password')
     ]
 ]
 ?>

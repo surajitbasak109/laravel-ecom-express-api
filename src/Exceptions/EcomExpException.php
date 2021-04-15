@@ -1,10 +1,10 @@
 <?php
 
-namespace surajitbasak109\Ecomexpress\Exceptions;
+namespace surajitbasak109\EcomExp\Exceptions;
 
 use Exception;
 
-class EcomExpressException extends Exception
+class EcomExpException extends Exception
 {
 	public function __construct($message, $httpStatus = null, $httpBody = null, $jsonBody = null)
     {

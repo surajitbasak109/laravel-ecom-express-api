@@ -1,5 +1,5 @@
 <?php
-namespace surajitbasak109\Ecomexpress\Resources;
+namespace surajitbasak109\EcomExp\Resources;
 
 interface ResourceInterface
 {

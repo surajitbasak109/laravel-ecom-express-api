@@ -30,12 +30,12 @@
     },
     "autoload": {
         "psr-4": {
-            "surajitbasak109\\Ecomexpress\\": "src"
+            "surajitbasak109\\EcomExp\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "surajitbasak109\\Ecomexpress\\Tests\\": "tests"
+            "surajitbasak109\\EcomExp\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -50,10 +50,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "surajitbasak109\\Ecomexpress\\EcomexpressServiceProvider"
+                "surajitbasak109\\EcomExp\\EcomExpServiceProvider"
             ],
             "aliases": {
-                "Ecomexpress": "surajitbasak109\\Ecomexpress\\Ecomexpress"
+                "EcomExp": "surajitbasak109\\EcomExp\\EcomExp"
             }
         }
     },

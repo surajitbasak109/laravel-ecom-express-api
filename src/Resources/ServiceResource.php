@@ -1,7 +1,7 @@
 <?php
-namespace surajitbasak109\Ecomexpress\Resources;
+namespace surajitbasak109\EcomExp\Resources;
 
-use surajitbasak109\Ecomexpress\Resources\Resource;
+use surajitbasak109\EcomExp\Resources\Resource;
 
 class ServiceResource extends Resource
 {

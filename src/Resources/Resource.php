@@ -1,8 +1,8 @@
 <?php
-namespace surajitbasak109\Ecomexpress\Resources;
+namespace surajitbasak109\EcomExp\Resources;
 
-use surajitbasak109\Ecomexpress\Clients\Client;
-use surajitbasak109\Ecomexpress\Resources\ResourceInterface;
+use surajitbasak109\EcomExp\Clients\Client;
+use surajitbasak109\EcomExp\Resources\ResourceInterface;
 
 abstract class Resource implements ResourceInterface
 {
